@@ -1,0 +1,81 @@
+/*   
+Theme Name: Spindo Club Theme
+Theme URI: http://itpartner.ee
+Description: Custom theme rebuilt and supported by ITpartner.ee for Spindo Club
+Author: Juri Filatov
+Author URI: http://itpartner.ee
+Version: 1.0
+*/
+
+@media screen {
+
+html, body {background:#9ce219 url(images/bg_main.jpg) left top repeat-x; margin:0; padding:0; height:100%; font:14px Arial, Helvetica, sans-serif; color:#FFFFFF;}
+html, body, table, td {font:14px Arial, Helvetica, sans-serif; color:#FFFFFF;}
+#main_container {background:url(images/lilled_main.gif) right bottom no-repeat; width:990px; min-height:100%; position:relative;}
+* html div#main_container {height:100%;}
+#header img.image, #header img.image1, #header img.image2 {position:absolute; left:0; top:0;}
+#header img.image1 {left:180px;}
+#header img.image2 {left:238px;}
+#header #menu {background:#9ce219 url(images/menu/menu_bg.jpg) left top repeat-x;  position:absolute; left:238px; top:34px; height:35px;}
+#header #menu a { padding: 10px 15px; display:inline-block;}
+#menu_ul li {display: inline-block; }
+#menu_ul { margin: 0; }
+#header #menu2 {position:absolute; left:840px; top:16px;}
+#menu2 a {font:14px Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none;}
+#content {width:810px; font:14px Arial, Helvetica, sans-serif; color:#FFFFFF;padding:120px 0 165px 210px;}
+#content_esileht {width:820px; font:14px Arial, Helvetica, sans-serif; color:#FFFFFF; padding:120px 0 75px 210px;}
+#we_hate_spam {position:absolute; left:0; bottom:0;}
+#banner {position:absolute; right:0; bottom:0; height: 258px;}
+#banner_2 {position:absolute; right:125px; bottom:60px;}
+#banner_left {position:absolute; left:28px; top:240px;}
+#lilled {position:absolute; right:0; bottom:0;}
+a, a:hover, a:visited, a:hover:visited {font:14px Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline;}
+a:hover, a:visited:hover {text-decoration:none;}
+h1 {font:17px Arial, Helvetica, sans-serif; color:#FFFFFF; margin: 0px; padding-top: 10px; font-weight: bold;}
+h2 {font:15px Arial, Helvetica, sans-serif; color:#FFFFFF; margin: 0px; padding-top: 10px; font-weight: normal;}
+li {list-style-image:url(images/li_image.gif)}
+.logotipid {background:#FFFFFF; border:2px solid #84ba1a; padding:7px;}
+table#global_forms, table#global_forms fieldset legend {font:12px Arial, Helvetica, sans-serif; color:#d07315;}
+table#form, table#form td {font:12px Arial, Helvetica, sans-serif; color:#d07315;}
+table#form2 {background:#FFFFFF; font:12px Arial, Helvetica, sans-serif; color:#d07315;}
+table#form2, table#form2 td, table#form2 td table {font:12px Arial, Helvetica, sans-serif; color:#d07315;}
+table#form #form_small_txt {font:10px Arial, Helvetica, sans-serif; color:#999999;}
+table#form a, table#form a:hover, table#form a:visited, table#form a:hover:visited {font:12px Arial, Helvetica, sans-serif; color:#d07315; text-decoration:underline;}
+#form_tl {background:url(images/form/form_tl.png) left top no-repeat;}
+#form_tr {background:url(images/form/form_tr.png) right top no-repeat;}
+#form_bl {background:url(images/form/form_bl.png) bottom left no-repeat;}
+#form_br {background:url(images/form/form_br.png) bottom right no-repeat;}
+#form_border {background:#FFFFFF; height:17px; margin:0 20px 0 20px; border-top:3px solid #83c406;}
+#form_border_1 {background:#FFFFFF; border-left:3px solid #83c406; border-right:3px solid #83c406; margin:0; padding:0 13px 0 13px;}
+#form_border_2 {background:#FFFFFF; height:17px; margin:0 20px 0 20px; border-bottom:3px solid #83c406;}
+fieldset.fieldset {border:1px solid #9ce219; padding:5px;}
+#saurus_1 {font:9px Verdana; color:#60990f; text-align:center; display:block; position:absolute; right:395px; bottom:8px;}
+#saurus_2 {font:9px Verdana; color:#60990f; text-align:center; display:block; position:absolute; right:325px; bottom:8px;}
+#saurus_1 a, #saurus_2 a {font:9px Verdana; color:#4a760b; text-decoration:underline;}
+#saurus_1 a:hover, #saurus_2 a:hover {text-decoration:none;}
+
+#esileht_container {width:778px; height:630px; position:relative;}
+#esileht_logo {position:absolute; left:368px; top:7px;}
+#esileht_pilt_1 {position:absolute; left:76px; top:189px;}
+#esileht_pilt_2 {position:absolute; left:0; top:391px;}
+#esileht_eng {position:absolute; left:88px; top:111px;}
+#esileht_est {position:absolute; left:247px; top:106px;}
+#esileht_lat {position:absolute; left:455px; top:135px;}
+#esileht_lit {position:absolute; left:557px; top:217px;}
+#esileht_rus {position:absolute; left:656px; top:330px;}
+#saurus {font:9px Verdana; color:#60990f; text-align:center; width:100%; display:block; position:absolute; top:660px; padding:0 0 20px 0;}
+#saurus a {font:9px Verdana; color:#4a760b; text-decoration:underline;}
+#saurus a:hover {text-decoration:none;}
+
+ul#menu_ul li a {
+	text-decoration: none;
+	font-size:16px;
+	font-weight:bold;
+	text-shadow: 0px 0px 2px rgba(21, 80, 14, 1);
+}
+ul#menu_ul li a:hover {
+	color: #eaeaea;
+}
+ul#menu_ul li:last-child {
+	background:url(images/menu_after.jpg) top right no-repeat;
+}
