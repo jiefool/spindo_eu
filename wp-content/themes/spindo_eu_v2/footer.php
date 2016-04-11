@@ -1,10 +1,10 @@
 <section class="footer">
   <div class="container-fluid">
     <div class="col-md-6 col-md-offset-3">
-      <div class="col-md-10 col-md-offset-2">
-        <a href="" style="font-family:'Shadows Into Light';float:left;margin-right:20px"><h3>Terms and Conditions</h3></a>
-        <a href="" style="font-family:'Shadows Into Light';float:left;margin-right:20px"><h3>About Us</h3></a>
-        <a href="" style="font-family:'Shadows Into Light';float:left;margin-right:20px"><h3>Contact Us</h3></a>
+      <div class="col-md-10 col-md-offset-2 footer-links">
+        <a href=""><h3>Terms and Conditions</h3></a>
+        <a href=""><h3>About Us</h3></a>
+        <a href=""><h3>Contact Us</h3></a>
       </div>
     </div>
   </div>
