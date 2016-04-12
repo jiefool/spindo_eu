@@ -45,7 +45,7 @@ body {
   color:#fff;
 }
 
-.price-round{
+.prize-round{
   background-color:#ff5605;
   height:300px;
   width:300px;
@@ -54,44 +54,44 @@ body {
   border: solid 3px #cc6600;
 }
 
-.price-gadget, .price-holiday, .price-cash{  
+.prize-gadget, .prize-holiday, .prize-cash{  
   background-size:100% 100%;
   background-repeat: no-repeat;
 }
 
-.price-gadget{
+.prize-gadgets{
   background-image:url('images/gadgets.jpg');
 }
 
-.price-holiday{
+.prize-holiday{
   background-image:url('images/holiday.jpg');
 }
 
-.price-cash{
+.prize-cash{
   background-image:url('images/cash.jpg'); 
 }
 
-.price-header{
+.prize-header{
   margin-top:-59px;
   background-color:#94da10;
 }
 
-.price-header h3, .price-action h3{
+.prize-header h3, .prize-action h3{
   padding:5px;
   font-family: 'Shadows Into Light';
   text-align: center;
 }
 
-.price-header a, .price-action a{
+.prize-header a, .prize-action a{
   color:#fff;
 }
 
-.price-header a:hover, .price-action a:hover{
+.prize-header a:hover, .prize-action a:hover{
   color:#94da10;
 }
 
 
-.price-action{
+.prize-action{
   margin-top:290px;
   background-color: #ff5605;  
 }
@@ -106,4 +106,12 @@ body {
 
 .registration-form p{
   font-size:1.2em;
+}
+
+.change-prize{
+  margin-top:-40px;
+}
+
+.picked-prize{
+  display:none;
 }
