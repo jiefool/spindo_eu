@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 <?php
+  $ipAddress = '122.2.54.150';
+  //$ipAddress = $_SERVER['REMOTE_ADDR'];
+  $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
+  $detectedCountryCode = $locationDetails["geoplugin_countryCode"];
+  // $detectedCityName = $locationDetails["geoplugin_city"];
+  $detectedCityName = 'Tagbilaran City';
+
   $pickedPrize = $_GET['prize'];
   $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));  
 ?>
@@ -25,7 +32,11 @@
                 <select class="form-control" id="country-select">
                   <?php
                     foreach($allCountries as $country){
-                      echo '<option data-country-code="'.$country->alpha2Code.'" value="'.$country->name.'">'.$country->name.'</option>';
+                      $isSelected = '';
+                      if ($country->alpha2Code == $detectedCountryCode ){
+                        $isSelected = 'selected="selected"';
+                      }
+                      echo '<option data-country-code="'.$country->alpha2Code.'" value="'.$country->name.'" '.$isSelected.'>'.$country->name.'</option>';
                     }
                   ?>                 
                 </select>

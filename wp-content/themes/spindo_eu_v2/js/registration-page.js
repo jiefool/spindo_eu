@@ -1,6 +1,9 @@
 jQuery(document).ready(function(){   
   var countryCode = $("#country-select option:selected").attr("data-country-code");
   listCitiesForCountry(countryCode);
+
+  alert(detectedCountryCode);
+
   $("#country-select").change(function(){
     countryCode = $("#country-select option:selected").attr("data-country-code");
     $(".loading-prompt").show();
@@ -42,7 +45,11 @@ function listCitiesForCountry(countryCode){
       $(csv_data).each(
         function() {          
           if (this[0] == countryCode){
-            $("#city-select").append('<option value="'+this[6]+'">'+this[6]+'</option>');            
+            var isSelected = '';
+            if (this[0] == detectedCityName ){
+              isSelected = 'selected=selected';
+            }
+            $("#city-select").append('<option value="'+this[6]+'"'+isSelected+'>'+this[6]+'</option>');            
           } 
         }
       );
