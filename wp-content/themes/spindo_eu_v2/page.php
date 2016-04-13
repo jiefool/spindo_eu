@@ -7,6 +7,9 @@
   <div class="container-fluid">
     <div class="col-md-12 main-content">
       <div class="col-md-7 col-md-offset-1 registration-form">
+        <div class="loading-prompt">
+          <h3>Please wait loading cities...</h3>
+        </div>
         <h1>Registration</h1>
         <form method="POST" action="registration.php">
           <div class="row">
@@ -19,7 +22,7 @@
                 <input type="date" class="form-control" id="birthday" placeholder="Birthday">
               </div>
               <div class="form-group">              
-                <select class="form-control" id="country">
+                <select class="form-control" id="country-select">
                   <?php
                     foreach($allCountries as $country){
                       echo '<option data-country-code="'.$country->alpha2Code.'" value="'.$country->name.'">'.$country->name.'</option>';
@@ -42,7 +45,7 @@
                 </select>                              
               </div>
               <div class="form-group">              
-                <select class="form-control">
+                <select class="form-control" id="city-select">
                   <option>City 1</option>
                   <option>City 2</option>
                 </select>

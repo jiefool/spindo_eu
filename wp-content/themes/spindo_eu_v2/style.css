@@ -115,3 +115,14 @@ body {
 .picked-prize{
   display:none;
 }
+
+.loading-prompt{  
+  z-index:999;
+  font-family:'Shadows Into Light';
+  background-color:gray;
+  position:absolute;
+  top:30%;
+  left:50%;
+  text-align:center;
+  padding:20px;
+}

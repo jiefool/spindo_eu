@@ -1,7 +1,11 @@
-jQuery(document).ready(function(){ 
-  var countryCode = $("#country").val();
-  alert(countryCode);
-
+jQuery(document).ready(function(){   
+  var countryCode = $("#country-select option:selected").attr("data-country-code");
+  listCitiesForCountry(countryCode);
+  $("#country-select").change(function(){
+    countryCode = $("#country-select option:selected").attr("data-country-code");
+    $(".loading-prompt").show();
+    listCitiesForCountry(countryCode);
+  });
 
   var pickedPrize = $("#picked-prize").val();
   if (pickedPrize=='gadgets'){
@@ -25,3 +29,24 @@ jQuery(document).ready(function(){
     window.location.href = currentWindowUrl.replace(sliceUrl, "prize="+prizeValue);
   });
 });
+
+
+function listCitiesForCountry(countryCode){  
+  worldCitiesFile = $.get(worldCitiesPath);  
+  
+  var countryCities = [];      
+  $.get(worldCitiesPath, 
+    function(text_data) {
+      var csv_data = $.simple_csv(text_data);
+      $("#city-select option").remove();      
+      $(csv_data).each(
+        function() {          
+          if (this[0] == countryCode){
+            $("#city-select").append('<option value="'+this[6]+'">'+this[6]+'</option>');            
+          } 
+        }
+      );
+      $(".loading-prompt").hide();      
+    }
+  );  
+}
