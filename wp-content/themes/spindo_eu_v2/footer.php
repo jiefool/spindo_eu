@@ -14,15 +14,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/simple_csv/dist/jquery.simple_csv.min.js"></script>
-<script type="text/javascript">  
-
-  $(window).load(function(){
-    var worldCitiesPath = "<?php echo get_template_directory_uri(); ?>/worldcities.csv";
-    var detectedCountryCode = "<?php echo $detectedCountryCode ?>";
-    var detectedCityName = "<?php echo $detectedCityName ?>";
-  });
-  
-</script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/registration-page.js"></script>
 
 

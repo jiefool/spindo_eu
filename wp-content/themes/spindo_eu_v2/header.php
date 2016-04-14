@@ -50,10 +50,21 @@
         <div class="col-md-6 header-text">
           <h1>pick, join and win the price you want!</h1>
         </div>
-        <div class="col-md-3 social-links">
-         <a href=""><h1><i class="fa fa-facebook-official"></h1></i></a>
-         <a href=""><h1><i class="fa fa-twitter"></h1></i></a>
-         <a href=""><h1><i class="fa fa-pinterest"></h1></i></a>
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="ad-banner"> 
+                <h1>Ad Banner</h1>             
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 social-links">
+              <a href=""><h1><i class="fa fa-facebook-official"></h1></i></a>
+              <!-- <a href=""><h1><i class="fa fa-twitter"></h1></i></a>
+              <a href=""><h1><i class="fa fa-pinterest"></h1></i></a> -->
+            </div>
+          </div>
         </div>
       </div>
     </div>

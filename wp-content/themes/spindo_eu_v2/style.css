@@ -29,7 +29,17 @@ body {
 }
 
 .social-links{
-  margin-top:35px;
+  margin-top:0px;
+}
+
+.ad-banner{
+  text-align:center;
+  vertical-align: middle;
+  font-family:'Shadows Into Light';
+  margin-top:20px;
+  height:100px;
+  width:420px;
+  background-color:orange;
 }
 
 .social-links h1{

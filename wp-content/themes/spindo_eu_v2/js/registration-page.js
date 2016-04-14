@@ -1,15 +1,4 @@
-jQuery(document).ready(function(){   
-  var countryCode = $("#country-select option:selected").attr("data-country-code");
-  listCitiesForCountry(countryCode);
-
-  alert(detectedCountryCode);
-
-  $("#country-select").change(function(){
-    countryCode = $("#country-select option:selected").attr("data-country-code");
-    $(".loading-prompt").show();
-    listCitiesForCountry(countryCode);
-  });
-
+jQuery(document).ready(function(){ 
   var pickedPrize = $("#picked-prize").val();
   if (pickedPrize=='gadgets'){
     $(".picked-prize").hide();
@@ -22,7 +11,6 @@ jQuery(document).ready(function(){
     $(".prize-cash").show();
   }
 
-
   $(".change-prize").change(function(){
     var prizeValue = $("#change-prize").val();
     var currentWindowUrl = window.location.href;
@@ -34,9 +22,19 @@ jQuery(document).ready(function(){
 });
 
 
+jQuery(window).load(function(){
+  var countryCode = $("#country-select option:selected").attr("data-country-code");
+  listCitiesForCountry(countryCode);
+
+  $("#country-select").change(function(){
+    countryCode = $("#country-select option:selected").attr("data-country-code");
+    $(".loading-prompt").show();
+    listCitiesForCountry(countryCode);
+  });  
+});    
+
 function listCitiesForCountry(countryCode){  
-  worldCitiesFile = $.get(worldCitiesPath);  
-  
+  worldCitiesFile = $.get(worldCitiesPath);
   var countryCities = [];      
   $.get(worldCitiesPath, 
     function(text_data) {
@@ -44,9 +42,9 @@ function listCitiesForCountry(countryCode){
       $("#city-select option").remove();      
       $(csv_data).each(
         function() {          
-          if (this[0] == countryCode){
+          if (this[0] == countryCode){            
             var isSelected = '';
-            if (this[0] == detectedCityName ){
+            if (this[6] == detectedCityName ){
               isSelected = 'selected=selected';
             }
             $("#city-select").append('<option value="'+this[6]+'"'+isSelected+'>'+this[6]+'</option>');            

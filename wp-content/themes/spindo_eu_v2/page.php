@@ -10,6 +10,11 @@
   $pickedPrize = $_GET['prize'];
   $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));  
 ?>
+<script type="text/javascript">    
+    var worldCitiesPath = "<?php echo get_template_directory_uri(); ?>/worldcities.csv";
+    var detectedCountryCode = "<?php echo $detectedCountryCode; ?>";
+    var detectedCityName = "<?php echo $detectedCityName; ?>";
+</script>
 <section>
   <div class="container-fluid">
     <div class="col-md-12 main-content">
@@ -18,15 +23,17 @@
           <h3>Please wait loading cities...</h3>
         </div>
         <h1>Registration</h1>
-        <form method="POST" action="registration.php">
+        <form method="post" action="https://spindo.sendsmaily.net/api/opt-in/" name="oi_form">
+          <input type="hidden" name="key" value="WiEb8i9A9myCi-Skqg0yuS0eeO86VqmYwZ6X-qFcbxE," /> 
+          <input type="hidden" name="autoresponder" value="7" />
           <div class="row">
             <div class="col-md-6">
               <input type="hidden" name="picked-prize" id="picked-prize" value="<?php echo $pickedPrize ?>">
               <div class="form-group">              
-                <input type="email" class="form-control" id="first-name" placeholder="First Name">
+                <input type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name" required>
               </div>
               <div class="form-group">              
-                <input type="date" class="form-control" id="birthday" placeholder="Birthday">
+                <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday">
               </div>
               <div class="form-group">              
                 <select class="form-control" id="country-select">
@@ -42,12 +49,12 @@
                 </select>
               </div>
               <div class="form-group">              
-                <input type="text" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
               </div>            
             </div>
             <div class="col-md-6">
               <div class="form-group">              
-                <input type="email" class="form-control" id="last-name" placeholder="Last Name">
+                <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Last Name">
               </div>
               <div class="form-group">
                 <select class="form-control">
@@ -62,7 +69,7 @@
                 </select>
               </div>
               <div class="form-group">              
-                <input type="text" class="form-control" id="contact-number" placeholder="Contact #">
+                <input type="text" class="form-control" name="contact-number" id="contact-number" placeholder="Contact #">
               </div>
             </div>
           </div>
@@ -70,7 +77,7 @@
             <div class="col-md-12">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"><p>I accept Terms and Conditions</p>
+                  <input type="checkbox" required name="terms-and-conditions"><p>I accept Terms and Conditions</p>
                 </label>
               </div>
               <button type="submit" class="btn btn-warning btn-block btn-lg">Register</button>
