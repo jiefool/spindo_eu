@@ -20,8 +20,8 @@
 		   ?>
 	</title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' type='text/css'>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css" />  
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/font-awesome-4.5.0/css/font-awesome.min.css">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">	
@@ -38,26 +38,33 @@
   </script>
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php //wp_head(); ?>
-</head>
+ </head>
 <body>
 <section class="header">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="col-md-3">
-          <img src="<?php bloginfo('template_url'); ?>/images/esileht_logo.png" class="header-logo"/>
+          <a href="<?php echo get_site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/images/esileht_logo.png" class="header-logo"/></a>
         </div>
         <div class="col-md-6 header-text">
           <h1>pick, join and win the price you want!</h1>
         </div>
-        <div class="col-md-3">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="ad-banner"> 
-                <h1>Ad Banner</h1>             
-              </div>
-            </div>
-          </div>
+        <div class="col-md-3"> 
+         <!--  <div class="row">
+            <div class="col-md-12 language-selector"> 
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  English
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">Estonian</a></li>                  
+                </ul>
+              </div>  
+            </div>             
+          </div>         -->       
           <div class="row">
             <div class="col-md-12 social-links">
               <a href=""><h1><i class="fa fa-facebook-official"></h1></i></a>

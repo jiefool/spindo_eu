@@ -23,14 +23,16 @@ jQuery(document).ready(function(){
 
 
 jQuery(window).load(function(){
-  var countryCode = $("#country-select option:selected").attr("data-country-code");
-  listCitiesForCountry(countryCode);
-
-  $("#country-select").change(function(){
-    countryCode = $("#country-select option:selected").attr("data-country-code");
-    $(".loading-prompt").show();
+  if (window.location.href.indexOf("prize") != -1){
+    var countryCode = $("#country-select option:selected").attr("data-country-code");
     listCitiesForCountry(countryCode);
-  });  
+
+    $("#country-select").change(function(){
+      countryCode = $("#country-select option:selected").attr("data-country-code");
+      $(".loading-prompt").show();
+      listCitiesForCountry(countryCode);
+    });  
+  }
 });    
 
 function listCitiesForCountry(countryCode){  
@@ -54,4 +56,13 @@ function listCitiesForCountry(countryCode){
       $(".loading-prompt").hide();      
     }
   );  
+}
+
+function registrationSaveToDatabase(){  
+  $("#oi_form").ajaxSubmit({url: registrationDBScript, type: 'post'})
+  var currentWindowUrl = window.location.href;
+  var urlLength = currentWindowUrl.length;
+  var prizeParamIndex = currentWindowUrl.indexOf("home");
+  var sliceUrl = currentWindowUrl.slice(prizeParamIndex, urlLength);
+  window.location.href = currentWindowUrl.replace(sliceUrl, "thank-you");
 }

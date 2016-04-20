@@ -23,33 +23,23 @@ body {
 }
 
 .header-text h1{
-  font-family:'Shadows Into Light';
+  font-family:'Architects Daughter';
   margin-top:50px;
   color:#fff;
 }
 
 .social-links{
-  margin-top:0px;
-}
-
-.ad-banner{
-  text-align:center;
-  vertical-align: middle;
-  font-family:'Shadows Into Light';
-  margin-top:20px;
-  height:100px;
-  width:420px;
-  background-color:orange;
+  margin-top:60px;
 }
 
 .social-links h1{
   float:left;
   margin-right:10px;  
-  color:#ff5605;
+  color:#ff5605;  
 }
 
 .footer-links h3{
-  font-family:'Shadows Into Light';
+  font-family:'Architects Daughter';
   float:left;
   margin-right:20px;
   color:#fff;
@@ -88,7 +78,7 @@ body {
 
 .prize-header h3, .prize-action h3{
   padding:5px;
-  font-family: 'Shadows Into Light';
+  font-family: 'Architects Daughter';
   text-align: center;
 }
 
@@ -108,10 +98,11 @@ body {
 
 .registration-form{
   padding:10px;
+  font-family: 'Architects Daughter';
 }
 
 .registration-form h1, .registration-form p{
-  font-family: 'Shadows Into Light';
+  font-family: 'Architects Daughter';
 }
 
 .registration-form p{
@@ -128,11 +119,28 @@ body {
 
 .loading-prompt{  
   z-index:999;
-  font-family:'Shadows Into Light';
+  font-family:'Architects Daughter';
   background-color:gray;
   position:absolute;
   top:30%;
   left:50%;
   text-align:center;
   padding:20px;
+}
+
+.language-selector{
+  margin-top:50px;
+  /*background-color: #ff5605;*/
+  height: 20px;
+}
+
+.email-exists-error{
+  font-family: 'Architects Daughter';
+  margin-top:100px;
+  
+}
+
+.static-content{
+  font-family: 'Architects Daughter';
+  font-size:1.2em;
 }

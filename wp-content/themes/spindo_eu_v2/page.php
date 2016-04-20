@@ -1,19 +1,20 @@
 <?php get_header(); ?>
 <?php
-  $ipAddress = '122.2.54.150';
-  //$ipAddress = $_SERVER['REMOTE_ADDR'];
+  // $ipAddress = '122.2.54.150';
+  $ipAddress = $_SERVER['REMOTE_ADDR'];
   $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
-  $detectedCountryCode = $locationDetails["geoplugin_countryCode"];
-  // $detectedCityName = $locationDetails["geoplugin_city"];
-  $detectedCityName = 'Tagbilaran City';
+  $detectedCountryCode = $locationDetails["geoplugin_countryCode"];  
+  $detectedCityName = $locationDetails["geoplugin_city"];
+  // $detectedCityName = 'Tagbilaran City';
 
   $pickedPrize = $_GET['prize'];
   $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));  
 ?>
 <script type="text/javascript">    
-    var worldCitiesPath = "<?php echo get_template_directory_uri(); ?>/worldcities.csv";
-    var detectedCountryCode = "<?php echo $detectedCountryCode; ?>";
-    var detectedCityName = "<?php echo $detectedCityName; ?>";
+  var worldCitiesPath = "<?php echo get_template_directory_uri(); ?>/worldcities.csv";
+  var registrationDBScript = "<?php echo get_site_url(); ?>/registration";
+  var detectedCountryCode = "<?php echo $detectedCountryCode; ?>";
+  var detectedCityName = "<?php echo $detectedCityName; ?>";
 </script>
 <section>
   <div class="container-fluid">
@@ -23,9 +24,12 @@
           <h3>Please wait loading cities...</h3>
         </div>
         <h1>Registration</h1>
-        <form method="post" action="https://spindo.sendsmaily.net/api/opt-in/" name="oi_form">
+        
+        <form method="post" action="https://spindo.sendsmaily.net/api/opt-in/" name="oi_form" id="oi_form" onsubmit="registrationSaveToDatabase();">
           <input type="hidden" name="key" value="WiEb8i9A9myCi-Skqg0yuS0eeO86VqmYwZ6X-qFcbxE," /> 
           <input type="hidden" name="autoresponder" value="7" />
+          <input type="hidden" name="success_url" value="<?php echo get_site_url();?>/thank-you" />
+          <input type="hidden" name="failure_url" value="<?php echo get_site_url();?>/something-went-wrong" />
           <div class="row">
             <div class="col-md-6">
               <input type="hidden" name="picked-prize" id="picked-prize" value="<?php echo $pickedPrize ?>">
@@ -36,7 +40,7 @@
                 <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday">
               </div>
               <div class="form-group">              
-                <select class="form-control" id="country-select">
+                <select class="form-control" id="country-select" name="country">
                   <?php
                     foreach($allCountries as $country){
                       $isSelected = '';
@@ -57,13 +61,13 @@
                 <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Last Name">
               </div>
               <div class="form-group">
-                <select class="form-control">
+                <select class="form-control" name="gender">
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>                              
               </div>
               <div class="form-group">              
-                <select class="form-control" id="city-select">
+                <select class="form-control" id="city-select" name="city">
                   <option>City 1</option>
                   <option>City 2</option>
                 </select>
@@ -77,10 +81,10 @@
             <div class="col-md-12">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" required name="terms-and-conditions"><p>I accept Terms and Conditions</p>
+                  <input type="checkbox" required name="terms-and-conditions"><p>Yes, I accept the <a href="<?php echo get_site_url(); ?>/rules">rules of the Spindo Club</a> and want to join for free.</p>
                 </label>
               </div>
-              <button type="submit" class="btn btn-warning btn-block btn-lg">Register</button>
+              <button type="submit" class="btn btn-warning btn-block btn-lg">Register</button>              
             </div>        
           </div>          
         </form>        
