@@ -8,7 +8,7 @@ Version: 2.0
 */
 
 body {
-  background-color:#94da10 !important;
+  background-color:#94da10 !important;  
 }
 
 .main-content{
@@ -38,11 +38,22 @@ body {
   color:#ff5605;  
 }
 
+.social-links .fa-facebook-official{
+  color: #3B5998;
+}
+
+
 .footer-links h3{
   font-family:'Architects Daughter';
   float:left;
   margin-right:20px;
   color:#fff;
+}
+
+.footer-copyright{
+  font-family:'Architects Daughter';
+  text-align: center;
+  padding-bottom:20px;
 }
 
 .prize-round{
@@ -111,6 +122,7 @@ body {
 
 .change-prize{
   margin-top:-40px;
+  font-family: 'Architects Daughter';
 }
 
 .picked-prize{
@@ -143,4 +155,19 @@ body {
 .static-content{
   font-family: 'Architects Daughter';
   font-size:1.2em;
+}
+
+.deal-box{  
+  display: block;
+  width: 100%;
+  height:300px;
+  background-color: black;
+  padding:10px;  
+  margin: 5px 0px;
+}
+
+.deal-box img{
+  width:inherit;
+  margin:0 auto;
+  height:280px;
 }

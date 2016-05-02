@@ -1,11 +1,27 @@
 <section class="footer">
   <div class="container-fluid">
     <div class="col-md-6 col-md-offset-3">
-      <div class="col-md-10 col-md-offset-2 footer-links">
-        <a href="<?php echo get_site_url(); ?>/deals"><h3>Deals</h3></a>
-        <a href="<?php echo get_site_url(); ?>/rules"><h3>Rules</h3></a>
-        <a href="<?php echo get_site_url(); ?>/about-us"><h3>About Us</h3></a>
-        <a href="<?php echo get_site_url(); ?>/contact"><h3>Contact Us</h3></a>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2 footer-links">
+          <?php
+            // $currentUrl = rtrim(get_permalink(), '/');
+            // $siteUrl = get_site_url();
+            // if ($currentUrl != $siteUrl){
+            //   if (preg_match('/home/', $currentUrl) != true){
+            //     echo '<a href="'.$siteUrl.'/deals"><h3>Deals</h3></a>';
+            //   }
+            // }          
+          ?>        
+          <a href="<?php echo get_site_url(); ?>/deals"><h3>Deals</h3></a>
+          <a href="<?php echo get_site_url(); ?>/rules"><h3>Rules</h3></a>
+          <a href="<?php echo get_site_url(); ?>/about-us"><h3>About Us</h3></a>
+          <a href="<?php echo get_site_url(); ?>/contact"><h3>Contact Us</h3></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 footer-copyright">
+          © 2007 - 2016
+        </div>
       </div>
     </div>
   </div>

@@ -23,7 +23,7 @@
         <div class="loading-prompt">
           <h3>Please wait loading cities...</h3>
         </div>
-        <h1>Registration</h1>
+        <h1>Join Now</h1>
         
         <form method="post" action="https://spindo.sendsmaily.net/api/opt-in/" name="oi_form" id="oi_form" onsubmit="registrationSaveToDatabase();">
           <input type="hidden" name="key" value="WiEb8i9A9myCi-Skqg0yuS0eeO86VqmYwZ6X-qFcbxE," /> 
@@ -84,7 +84,7 @@
                   <input type="checkbox" required name="terms-and-conditions"><p>Yes, I accept the <a href="<?php echo get_site_url(); ?>/rules">rules of the Spindo Club</a> and want to join for free.</p>
                 </label>
               </div>
-              <button type="submit" class="btn btn-warning btn-block btn-lg">Register</button>              
+              <button type="submit" class="btn btn-warning btn-block btn-lg">Yes, I join</button>              
             </div>        
           </div>          
         </form>        
