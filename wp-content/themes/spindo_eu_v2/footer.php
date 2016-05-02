@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-10 footer-copyright">
-          © 2007 - 2016
+        <div class="col-md-10 col-md-offset-1 footer-copyright">
+          Spindo.eu © 2007 - 2016
         </div>
       </div>
     </div>
