@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="col-md-6 col-md-offset-3">
       <div class="row">
-        <div class="col-md-10 col-md-offset-2 footer-links">
+        <div class="col-md-10 col-md-offset-2 footer-links col-xs-6 col-xs-offset-3">
           <?php
             // $currentUrl = rtrim(get_permalink(), '/');
             // $siteUrl = get_site_url();

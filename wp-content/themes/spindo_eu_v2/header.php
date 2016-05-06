@@ -43,11 +43,11 @@
 <section class="header">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="col-md-3">
+      <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <div class="col-md-3 col-xs-3">
           <a href="<?php echo get_site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/images/esileht_logo.png" class="header-logo"/></a>
         </div>
-        <div class="col-md-6 header-text">
+        <div class="col-md-6 col-xs-6 header-text">
           <h1>pick, join FREE and win the price you want!</h1>
         </div>
         <div class="col-md-3"> 
