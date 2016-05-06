@@ -36,26 +36,18 @@ jQuery(window).load(function(){
 });    
 
 function listCitiesForCountry(countryCode){  
-  worldCitiesFile = $.get(worldCitiesPath);
-  var countryCities = [];      
-  $.get(worldCitiesPath, 
-    function(text_data) {
-      var csv_data = $.simple_csv(text_data);
-      $("#city-select option").remove();      
-      $(csv_data).each(
-        function() {          
-          if (this[0] == countryCode){            
-            var isSelected = '';
-            if (this[6] == detectedCityName ){
-              isSelected = 'selected=selected';
-            }
-            $("#city-select").append('<option value="'+this[6]+'"'+isSelected+'>'+this[6]+'</option>');            
-          } 
+  $.get(countryCities+countryCode, function(response){
+    var obj = jQuery.parseJSON(response); 
+    $("#city-select option").remove();      
+    $(obj).each(function(){  
+        var isSelected = '';
+        if (this.name == detectedCityName ){
+          isSelected = 'selected=selected';
         }
-      );
-      $(".loading-prompt").hide();      
-    }
-  );  
+        $("#city-select").append('<option value="'+this.name+'"'+isSelected+'>'+this.name+'</option>');                     
+      });
+    $(".loading-prompt").hide(); 
+  });
 }
 
 function registrationSaveToDatabase(){  

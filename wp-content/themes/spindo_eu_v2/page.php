@@ -4,14 +4,16 @@
   $ipAddress = $_SERVER['REMOTE_ADDR'];
   $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
   $detectedCountryCode = $locationDetails["geoplugin_countryCode"];  
+  // $detectedCountryCode = 'PH';
   $detectedCityName = $locationDetails["geoplugin_city"];
   // $detectedCityName = 'Tagbilaran City';
 
   $pickedPrize = $_GET['prize'];
-  $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));  
+  $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));    
+
 ?>
 <script type="text/javascript">    
-  var worldCitiesPath = "<?php echo get_template_directory_uri(); ?>/worldcities.csv";
+  var countryCities = "<?php echo get_site_url(); ?>/country-cities/?country_code=";
   var registrationDBScript = "<?php echo get_site_url(); ?>/registration";
   var detectedCountryCode = "<?php echo $detectedCountryCode; ?>";
   var detectedCityName = "<?php echo $detectedCityName; ?>";
@@ -67,9 +69,8 @@
                 </select>                              
               </div>
               <div class="form-group">              
-                <select class="form-control" id="city-select" name="city">
-                  <option>City 1</option>
-                  <option>City 2</option>
+                <select class="form-control" id="city-select" name="city">                
+                  <option value="">Please select</option>
                 </select>
               </div>
               <div class="form-group">              
