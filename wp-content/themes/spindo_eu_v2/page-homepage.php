@@ -13,7 +13,7 @@
               </div>
               <div class="row">
                 <div class="prize-action">
-                  <a href="<?php echo get_page_link(8); ?>?prize=gadgets"><h3>Grab it!</h3></a>
+                  <a href="<?php echo get_site_url(); ?>/home/?prize=gadgets"><h3>Grab it!</h3></a>
                 </div>
               </div>
             </div>
@@ -29,7 +29,7 @@
               </div>
               <div class="row">
                 <div class="prize-action">
-                  <a href="<?php echo get_page_link(8); ?>?prize=holiday"><h3>Fly now!</h3></a>
+                  <a href="<?php echo get_site_url(); ?>/home/?prize=holiday"><h3>Fly now!</h3></a>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@
               </div>
               <div class="row">
                 <div class="prize-action">
-                  <a href="<?php echo get_page_link(8); ?>?prize=cash"><h3>Take it!</h3></a>
+                  <a href="<?php echo get_site_url(); ?>/home/?prize=cash"><h3>Take it!</h3></a>
                 </div>
               </div>
             </div>
