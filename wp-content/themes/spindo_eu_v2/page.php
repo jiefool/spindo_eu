@@ -40,7 +40,7 @@
               </div>
               <div class="form-group">                              
                 <select class="form-control" id="birthday" name="birthday">
-                  <option value="">Select Birth year</option>
+                  <option value="">Select Birth Year</option>
                   <?php
                       $currentYear = date("Y");
                       $startYear  = $currentYear - 100;
