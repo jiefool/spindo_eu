@@ -38,8 +38,17 @@
               <div class="form-group">              
                 <input type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name" required>
               </div>
-              <div class="form-group">              
-                <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday">
+              <div class="form-group">                              
+                <select class="form-control" id="birthday" name="birthday">
+                  <option value="">Select Birth year</option>
+                  <?php
+                      $currentYear = date("Y");
+                      $startYear  = $currentYear - 100;
+                      for($i = $currentYear; $i > $startYear; $i--){
+                        echo '<option value="'.$i.'" '.'>'.$i.'</option>';
+                      }
+                  ?>
+                </select>
               </div>
               <div class="form-group">              
                 <select class="form-control" id="country-select" name="country">
