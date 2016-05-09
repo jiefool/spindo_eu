@@ -32,6 +32,7 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/simple_csv/dist/jquery.simple_csv.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/registration-page.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/invite-friend.js"></script>
 
 </body>
 </html>
