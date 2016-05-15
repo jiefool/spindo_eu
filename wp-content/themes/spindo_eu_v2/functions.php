@@ -84,6 +84,38 @@ function custom_menu_save()
 			update_post_meta( $post->ID, 'custom_menu_lang1', $_POST['custom_menu_lang1'] );
 }
 
+function checkEmailExist($email){   
+  global $wpdb; 
+  return $wpdb->get_row("SELECT * FROM referral WHERE email='".$email."';");
+}
 
+function insertReferral($email, $referrerId){    
+  global $wpdb;
+  $wpdb->insert('referral', array('referrer_id' => $referrerId, 'email' => $email ), array('%d', '%s'));
+}
+
+
+function get_visitor_country_code(){
+  // $ipAddress = '122.2.54.150';
+  $ipAddress = $_SERVER['REMOTE_ADDR'];
+  $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
+  return $locationDetails["geoplugin_countryCode"];  
+}
+
+function get_fb_link(){
+  $visitorCountryCode = get_visitor_country_code();
+  // $visitorCountryCode = 'EE';
+  $toShowFbLink = 'https://www.facebook.com/Spindo-Club-Competitions-Prize-draws-and-Freebies-764808123655676/';  
+
+  if (strcmp($visitorCountryCode, 'EE') == 0){
+    return 'https://www.facebook.com/SpindoClub';
+  }else if (strcmp($visitorCountryCode, 'LV') == 0){
+    return 'https://www.facebook.com/Spindo-Club-lab%C4%81k%C4%81s-sp%C4%93les-un-laimesti-132377283603011';
+  }else if (strcmp($visitorCountryCode, 'LT') == 0){
+    return 'https://www.facebook.com/Spindo-Club-geriausi-žaidimai-ir-prizai-315195431917174/';
+  }else{
+    return 'https://www.facebook.com/Spindo-Club-Competitions-Prize-draws-and-Freebies-764808123655676/';
+  }
+}
 
 ?>

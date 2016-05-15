@@ -171,7 +171,15 @@ body {
   height:230px;
 }
 
-.main-content h3, .main-content ul, .main-content h4{
+.main-content h3, .main-content ul, .main-content h4, .main-content p{
   font-family: 'Architects Daughter';
+}
+
+.prize-content a{
+  color: #000;
+}
+
+.prize-content a:hover{
+  color: #fff;
 }
 
