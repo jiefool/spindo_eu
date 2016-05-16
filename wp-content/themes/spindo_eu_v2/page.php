@@ -39,7 +39,7 @@
                 <input type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name" required>
               </div>
               <div class="form-group">                              
-                <select class="form-control" id="birthday" name="birthday">
+                <select class="form-control" id="birth-year" name="birth-year">
                   <option value="">Select Birth Year</option>
                   <?php
                       $currentYear = date("Y");

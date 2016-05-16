@@ -11,7 +11,7 @@
   $data['picked_prize'] = $_POST['picked-prize'];
   $data['first_name'] = $_POST['first-name'];
   $data['last_name'] = $_POST['last-name'];  
-  $data['birthday'] = date('Y-m-d', strtotime($_POST['birthday']));
+  $data['birthday'] = date('Y-m-d', strtotime($_POST['birth-year']));
   $data['gender'] = $_POST['gender'];
   $data['country'] = $_POST['country'];
   $data['city'] = $_POST['city'];

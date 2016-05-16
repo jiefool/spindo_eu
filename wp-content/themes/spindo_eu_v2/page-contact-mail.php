@@ -5,8 +5,8 @@
 
   $to = ["jaypaulaying5@gmail.com", "tonis@p4r.eu"];
   $subject = "Spindo Contact Us";
-  $message = "Name: ".$_POST['sender-name']."<br/>";
-  $message = $message."Email: ".$_POST['sender-email']."<br/><br/>";
+  $message = "Name: ".$_POST['sender-name']."\n";
+  $message = $message."Email: ".$_POST['sender-email']."\n\n";
   $message = $message.$_POST['message'];
   $headers = "";
   $attachments = [];
