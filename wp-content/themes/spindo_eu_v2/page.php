@@ -8,7 +8,9 @@
   $detectedCityName = $locationDetails["geoplugin_city"];
   // $detectedCityName = 'Tagbilaran City';
 
-  $pickedPrize = $_GET['prize'];
+  $pickedPrize = $_GET['prize'];  
+  $emailSet = $_GET['email'];
+  
   $allCountries = json_decode(file_get_contents("https://restcountries.eu/rest/v1/all"));    
 
 ?>
@@ -64,7 +66,7 @@
                 </select>
               </div>
               <div class="form-group">              
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php echo $emailSet; ?>" required>
               </div>            
             </div>
             <div class="col-md-6">

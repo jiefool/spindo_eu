@@ -57,6 +57,17 @@
         </div>
         <div class="col-md-6 col-xs-6 header-text">
           <h1>pick, join FREE and win the price you want!</h1>
+          <form action='<?php echo get_site_url();?>/home/' method="get" id="short-reg-form">
+            <div class="form-group">              
+              <div class="input-group">               
+                <input type="hidden" value="gadgets" name="prize" />
+                <input class="form-control" type="email" placeholder="Email" name="email" required />
+                <span class="input-group-btn">
+                  <button class="btn btn-warning" type="submit">Join Now!</button>
+                </span>
+              </div>              
+            </div>
+          </form>
         </div>
         <div class="col-md-3"> 
          <!--  <div class="row">

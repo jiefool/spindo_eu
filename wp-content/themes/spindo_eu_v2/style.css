@@ -161,7 +161,7 @@ body {
   display: block;
   width: 300px;
   height:250px;
-  background-color: black;
+  /*background-color: black;*/
   padding:10px;  
   margin: 10px auto;
 }
@@ -183,3 +183,6 @@ body {
   color: #fff;
 }
 
+#short-reg-form{
+  font-family: 'Architects Daughter';
+}
