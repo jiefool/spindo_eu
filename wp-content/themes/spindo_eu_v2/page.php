@@ -4,7 +4,8 @@
   $ipAddress = $_SERVER['REMOTE_ADDR'];
   $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
   $detectedCountryCode = $locationDetails["geoplugin_countryCode"];  
-  // $detectedCountryCode = 'PH';
+  // $detectedCountryCode = 'EE';
+  $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE country_code = "'.$detectedCountryCode.'"');
   $detectedCityName = $locationDetails["geoplugin_city"];
   // $detectedCityName = 'Tagbilaran City';
 
@@ -34,6 +35,11 @@
           <input type="hidden" name="autoresponder" value="7" />
           <input type="hidden" name="success_url" value="<?php echo get_site_url();?>/thank-you" />
           <input type="hidden" name="failure_url" value="<?php echo get_site_url();?>/something-went-wrong" />
+          <?php            
+            foreach($dealsData as $dealEntry){
+              echo '<input type="hidden" name="available-deal[]" value="'.$dealEntry->image_url.'"/>';
+            }
+          ?>
           <div class="row">
             <div class="col-md-6">
               <input type="hidden" name="picked-prize" id="picked-prize" value="<?php echo $pickedPrize ?>">

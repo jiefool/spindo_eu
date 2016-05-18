@@ -42,8 +42,8 @@ function spindo_theme_add_deals_page(){
       $data['image_url']=$_POST['image-url'];
       $data['description']=$_POST['description'];
       $data['country_code']=$_POST['country-code'];
-      $data['long']=$_POST['long'];
-      $data['lat']=$_POST['lat'];
+      $data['longitude']=$_POST['long'];
+      $data['latitude']=$_POST['lat'];
       $data['end_date']=$_POST['end-date'];  
 
       global $wpdb;
