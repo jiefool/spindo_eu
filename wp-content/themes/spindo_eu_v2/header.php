@@ -36,6 +36,7 @@
     ga('create', 'UA-57626088-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php //wp_head(); ?>
  </head>

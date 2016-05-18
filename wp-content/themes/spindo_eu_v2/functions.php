@@ -1,4 +1,6 @@
 <?php
+
+  require get_template_directory() . '/inc/function-admin.php';
 	
 	// Add RSS links to <head> section
 	automatic_feed_links();
@@ -118,4 +120,5 @@ function get_fb_link(){
   }
 }
 
-?>
+
+

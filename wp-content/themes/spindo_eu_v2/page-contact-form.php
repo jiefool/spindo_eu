@@ -20,17 +20,18 @@
         </p>
         <div class="row">
           <div class="col-md-6">
-            <form method="post" action="<?php echo get_site_url().'/send-email'; ?>" name="contact-form" id="contact-form">
+            <form method="post" action="<?php echo get_site_url().'/send-email'; ?>" name="contact-form" id="contact-form" onsubmit="return checkRecaptcha();">
               <div class="form-group">
-                <input class="form-control" type="text" name="sender-name" placeholder="Name">
+                <input class="form-control" type="text" name="sender-name" placeholder="Name" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" name="sender-email" placeholder="Email">
+                <input class="form-control" type="email" name="sender-email" placeholder="Email" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" columns="50" rows="5" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" columns="50" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LdMICATAAAAABZ1_FJqJJZUlHbmjrnBNJjeLAj1"></div>
                 <button class="btn btn-warning btn-block" type="submit">Send</button>
               </div>
             </form>        
