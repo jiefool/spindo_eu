@@ -28,7 +28,7 @@
     <div class="col-md-12 main-content col-xs-12">  
       <div class="row">
         <div class="col-md-6 col-md-offset-3">  
-          <h3>Thank you for referring Spindo Club to your friends.<?php echo get_visitor_country_code(); ?></h3>
+          <h3>Thank you for referring Spindo Club to your friends.</h3>
           <?php
             if (count($alreadyAddedEmails) > 0){
               echo "<h4>Following emails already referred:</h4>";
