@@ -15,6 +15,10 @@
         <label for="end-date">Deal Image URL: </label>
         <input class="form-control" type="text" placeholder="Deal Image URL" name="image-url" required/>
       </div>
+       <div class="form-group">  
+        <label for="end-date">Deal Link: </label>
+        <input class="form-control" type="text" placeholder="Deal Link" name="deal-link" required/>
+      </div>
       <div class="form-group">  
         <label for="end-date">Description: </label>
         <input class="form-control" type="text" placeholder="Description" name="description" />

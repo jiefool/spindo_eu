@@ -57,18 +57,7 @@
           <a href="<?php echo get_site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/images/esileht_logo.png" class="header-logo"/></a>
         </div>
         <div class="col-md-6 col-xs-6 header-text">
-          <h1>pick, join FREE and win the price you want!</h1>
-          <form action='<?php echo get_site_url();?>/home/' method="get" id="short-reg-form">
-            <div class="form-group">              
-              <div class="input-group">               
-                <input type="hidden" value="gadgets" name="prize" />
-                <input class="form-control" type="email" placeholder="Email" name="email" required />
-                <span class="input-group-btn">
-                  <button class="btn btn-warning" type="submit">Join Now!</button>
-                </span>
-              </div>              
-            </div>
-          </form>
+          <h1>pick, join FREE and win the price you want!</h1>         
         </div>
         <div class="col-md-3"> 
          <!--  <div class="row">
@@ -85,12 +74,23 @@
               </div>  
             </div>             
           </div>         -->       
-          <div class="row">
+          <div class="row">          
             <div class="col-md-12 social-links">
               <a href="<?php echo get_fb_link(); ?>"><h1><i class="fa fa-facebook-official"></h1></i></a>
               <!-- <a href=""><h1><i class="fa fa-twitter"></h1></i></a>
               <a href=""><h1><i class="fa fa-pinterest"></h1></i></a> -->
-            </div>
+              <form action='<?php echo get_site_url();?>/home/' method="get" id="short-reg-form">
+                <div class="form-group">              
+                  <div class="input-group">               
+                    <input type="hidden" value="gadgets" name="prize" />
+                    <input class="form-control" type="email" placeholder="Email" name="email" required />
+                    <span class="input-group-btn">
+                      <button class="btn btn-warning" type="submit">Join Now!</button>
+                    </span>
+                  </div>              
+                </div>
+              </form>
+            </div>           
           </div>
         </div>
       </div>

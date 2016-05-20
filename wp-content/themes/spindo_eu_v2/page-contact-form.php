@@ -3,8 +3,13 @@
   Template Name: Contact Form
   */
 
+  $ipAddress = $_SERVER['REMOTE_ADDR'];
   get_header(); 
 ?>
+<script type='text/javascript'>
+  var clientIpAddress = '<?php echo $ipAddress; ?>' 
+  var key = '6LdMICATAAAAABZ1_FJqJJZUlHbmjrnBNJjeLAj1';
+</script>
 
 <section>
   <div class="container-fluid">
@@ -17,7 +22,7 @@
           KMK/VAT Number: EE101308067<br/>
           Address: Tornimäe 5, 10145, Tallinn, Estonia<br/>
           E-mail: business@spindo.eu<br/>
-        </p>
+        </p>      
         <div class="row">
           <div class="col-md-6">
             <form method="post" action="<?php echo get_site_url().'/send-email'; ?>" name="contact-form" id="contact-form" onsubmit="return checkRecaptcha();">
@@ -33,6 +38,9 @@
               <div class="form-group">
                 <div class="g-recaptcha" data-sitekey="6LdMICATAAAAABZ1_FJqJJZUlHbmjrnBNJjeLAj1"></div>
                 <button class="btn btn-warning btn-block" type="submit">Send</button>
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                    async defer>
+                </script>
               </div>
             </form>        
           </div>
@@ -41,6 +49,7 @@
     </div>
   </div>
 </section>
+
 
 
 

@@ -186,3 +186,8 @@ body {
 #short-reg-form{
   font-family: 'Architects Daughter';
 }
+
+#short-reg-form{
+  width:300px;
+  margin-top:80px;
+}

@@ -9,11 +9,24 @@
   $referrerId = $_POST['referrer-id'];
   $referredEmails = $_POST['referred-email'];
   $alreadyAddedEmails = [];
+  
+  global $wpdb;
+  $referrer  = $wpdb->get_row("SELECT * FROM lead_prize WHERE id='".$referrerId."'");
+
+  $subject = 'You are referred to Spindo';
+  $message = "Hello,\n\nYou are referred to Spindo Club by your friend with email ".$referrer->email.". You might want to check us out.\nhttps://spindo.eu\n\nRegards,\nSpindo Club";
+  $headers = '';
+  $attachments = [];
+
+  wp_mail( $to, $subject, $message, $headers, $attachments );
+
 
   foreach($referredEmails as $email){    
     $isEmailExists = checkEmailExist($email);    
     if ($isEmailExists == ""){
-      insertReferral($email, $referrerId);
+      insertReferral($email, $referrerId);     
+      $to = $email;
+      wp_mail( $to, $subject, $message, $headers, $attachments );
     }else{
       $alreadyAddedEmails[] = $email;
     }

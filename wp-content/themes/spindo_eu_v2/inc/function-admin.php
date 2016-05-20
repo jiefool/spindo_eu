@@ -27,19 +27,13 @@ function spindo_theme_admin_page(){
 
 function spindo_theme_add_deals_page(){
   if (isset($_GET['action'])){
-    if($_GET['action']=='insert-deal'){
-      $_POST['deal-name'];
-      $_POST['image-url'];
-      $_POST['description'];
-      $_POST['country-code'];
-      $_POST['long'];
-      $_POST['lat'];
-      $_POST['end-date'];
+    if($_GET['action']=='insert-deal'){    
 
       $table = "spindo_deals";
       $data = [];
       $data['deal_name']=$_POST['deal-name'];
       $data['image_url']=$_POST['image-url'];
+      $data['deal_link']=$_POST['deal-link'];
       $data['description']=$_POST['description'];
       $data['country_code']=$_POST['country-code'];
       $data['longitude']=$_POST['long'];
