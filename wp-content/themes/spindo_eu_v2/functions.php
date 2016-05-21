@@ -102,6 +102,7 @@ function get_visitor_country_code(){
   $ipAddress = $_SERVER['REMOTE_ADDR'];
   $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
   return $locationDetails["geoplugin_countryCode"];  
+  // return 'EE';
 }
 
 function get_fb_link(){
@@ -119,6 +120,15 @@ function get_fb_link(){
     return 'https://www.facebook.com/Spindo-Club-Competitions-Prize-draws-and-Freebies-764808123655676/';
   }
 }
+
+function get_deals_data(){
+  $detectedCountryCode = get_visitor_country_code();
+  global $wpdb;
+  $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE country_code = "'.$detectedCountryCode.'"');
+  return $dealsData;
+}
+
+
 
 
 

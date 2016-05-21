@@ -47,8 +47,13 @@
       </div>
     </div>
   </div>
-</section>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</section> 
 
- 
-
-<?php get_footer();?>
+<?php 
+require_once get_template_directory() . '/deal-section.php';
+get_footer();?>

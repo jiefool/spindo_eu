@@ -11,7 +11,9 @@
   $headers = "";
   $attachments = [];
 
-  wp_mail( $to, $subject, $message, $headers, $attachments );
+  if ($_POST['sender-name'] != '' && $_POST['sender-email'] != '' && $_POST['message'] != ''){
+    wp_mail( $to, $subject, $message, $headers, $attachments );
+  }
 
   get_header();
 ?>
@@ -28,4 +30,6 @@
   </div>
 </section>
 
-<?php get_footer(); ?>
+<?php 
+require_once get_template_directory() . '/deal-section.php';
+get_footer(); ?>
