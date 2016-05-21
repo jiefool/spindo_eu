@@ -25,15 +25,15 @@
       </div>
       <div class="form-group">  
         <label for="end-date">Country Code: </label>
-        <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code" required/>
+        <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code"/>
       </div>
       <div class="form-group">  
         <label for="end-date">Longitude: </label>
-        <input  class="form-control" type="text" placeholder="Longitude" name="long"/>
+        <input  class="form-control" type="text" placeholder="Longitude" name="longitude"/>
       </div>
       <div class="form-group">  
         <label for="end-date">Latitude: </label>
-        <input class="form-control" type="text" placeholder="Latitude" name="lat"/>
+        <input class="form-control" type="text" placeholder="Latitude" name="latitude"/>
       </div>
       <div class="form-group">  
         <label for="end-date">End Date: </label>

@@ -128,6 +128,14 @@ function get_deals_data(){
   return $dealsData;
 }
 
+function get_no_country_deals(){  
+  global $wpdb;
+  $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE country_code = ""');
+  return $dealsData;
+}
+
+
+
 
 
 
