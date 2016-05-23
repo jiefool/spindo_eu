@@ -12,22 +12,53 @@
         <label for="end-date">Deal Name: </label>
         <input class="form-control" type="text" placeholder="Deal Name" name="deal-name" value="<?php echo $deal->deal_name ?>" required />
       </div>
+
       <div class="form-group">  
         <label for="end-date">Deal Image URL: </label>
         <input class="form-control" type="text" placeholder="Deal Image URL" name="image-url" value="<?php echo $deal->image_url ?>" required/>
       </div>
+
        <div class="form-group">  
         <label for="end-date">Deal Link: </label>
         <input class="form-control" type="text" placeholder="Deal Link" name="deal-link" value="<?php echo $deal->deal_link ?>" required/>
       </div>
+
       <div class="form-group">  
         <label for="end-date">Description: </label>
         <input class="form-control" type="text" placeholder="Description" name="description" value="<?php echo $deal->description ?>" />
       </div>
-      <div class="form-group">  
-        <label for="end-date">Country Code: </label>
-        <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code" value="<?php echo $deal->country_code ?>" />
+
+      <div class="form-group" id="country-code-fields">  
+        <label for="end-date">Country Code: </label>        
+
+        <?php
+          $countryCodes = explode(',', $deal->country_code);
+          $count = 0;
+          foreach($countryCodes as $code){
+            if ($count == 0){
+              echo '<div class="input-group">
+                      <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code[]" value="'.$code.'" />
+                        <div class="input-group-addon">
+                        <a href="javascript:addCountryCodeField();">
+                          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                        </a>
+                      </div>          
+                    </div>';
+            }else{
+              echo '<div class="input-group" id="country-code-field-'.$count.'">
+                      <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code[]" value="'.$code.'" />
+                        <div class="input-group-addon">
+                        <a href="javascript:removeCountryCodeField('.$count.');">
+                          <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
+                        </a>
+                      </div>          
+                    </div>';
+            }
+            $count++;
+          }
+        ?>
       </div>
+
       <div class="form-group">  
         <label for="end-date">Longitude: </label>
         <input  class="form-control" type="text" placeholder="Longitude" name="longitude" value="<?php echo $deal->longitude ?>"/>
@@ -46,3 +77,4 @@
     </form>
   </div>
 </div>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/inc/templates/js/deals.js"></script>

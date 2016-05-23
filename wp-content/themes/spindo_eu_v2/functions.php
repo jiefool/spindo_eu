@@ -101,8 +101,8 @@ function get_visitor_country_code(){
   // $ipAddress = '122.2.54.150';
   $ipAddress = $_SERVER['REMOTE_ADDR'];
   $locationDetails = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ipAddress));  
-  return $locationDetails["geoplugin_countryCode"];  
-  // return 'EE';
+  // return $locationDetails["geoplugin_countryCode"];  
+  return 'EE';
 }
 
 function get_fb_link(){
@@ -121,7 +121,7 @@ function get_fb_link(){
   }
 }
 
-function get_deals_data(){
+function get_country_deals(){
   $detectedCountryCode = get_visitor_country_code();
   global $wpdb;
   $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE country_code = "'.$detectedCountryCode.'"');
@@ -131,6 +131,26 @@ function get_deals_data(){
 function get_no_country_deals(){  
   global $wpdb;
   $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE country_code = ""');
+  return $dealsData;
+}
+
+function show_deals($dealsData){
+  foreach($dealsData as $deals){                             
+    echo '<div class="col-md-4 col-xs-6">';
+    echo '<div class="deal-box">';
+    echo '<a href="'.$deals->deal_link.'" target="_blank">';
+    echo '<img src="'.$deals->image_url.'" alt="'.$deals->description.'" title="'.$deals->description.'">';
+    echo '</a>';
+    echo '</div>';
+    echo '</div>';          
+  }
+}
+
+function get_available_deals(){
+  $detectedCountryCode = get_visitor_country_code();
+  // $detectedCountryCode = 'PH';
+  global $wpdb;
+  $dealsData = $wpdb->get_results('SELECT * FROM spindo_deals WHERE (country_code LIKE "%'.$detectedCountryCode.'%" AND end_date >= CURDATE()) OR country_code = "" OR end_date IS NULL');
   return $dealsData;
 }
 

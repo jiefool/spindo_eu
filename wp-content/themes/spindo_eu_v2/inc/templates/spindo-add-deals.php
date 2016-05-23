@@ -23,10 +23,17 @@
         <label for="end-date">Description: </label>
         <input class="form-control" type="text" placeholder="Description" name="description" />
       </div>
-      <div class="form-group">  
+      <div class="form-group" id="country-code-fields">  
         <label for="end-date">Country Code: </label>
-        <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code"/>
-      </div>
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Country Code e.g. EE" name="country-code[]"/>
+          <div class="input-group-addon">
+            <a href="javascript:addCountryCodeField();">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+          </div>  
+        </div>
+      </div>      
       <div class="form-group">  
         <label for="end-date">Longitude: </label>
         <input  class="form-control" type="text" placeholder="Longitude" name="longitude"/>
@@ -45,3 +52,5 @@
     </form>
   </div>
 </div>
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/inc/templatesjs/deals.js"></script>
