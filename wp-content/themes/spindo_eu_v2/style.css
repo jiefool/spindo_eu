@@ -43,11 +43,23 @@ body {
 }
 
 
-.footer-links h3{
+.links-container a{
   font-family:'Architects Daughter';
-  float:left;
-  margin-right:20px;
+  font-size: 1.7em;
+  /*float:left;*/
+  margin:0 10px;
   color:#fff;
+ 
+}
+
+.footer-links{
+  margin:10px 0;
+  text-align:center;
+}
+
+.links-container{
+  display:inline-block;
+  text-align:center;
 }
 
 .footer-copyright{
@@ -189,5 +201,11 @@ body {
 
 #short-reg-form{
   width:300px;
-  margin-top:80px;
+  margin-top:30px;
 }
+
+.fb-language-section{
+  width: 300px;
+}
+
+

@@ -10,7 +10,7 @@
   $data = [];
   $data['picked_prize'] = $_POST['picked-prize'];
   $data['first_name'] = $_POST['first-name'];
-  $data['last_name'] = $_POST['last-name'];  
+  $data['last_name'] = $_POST['last-name'];
   $data['birthday'] = date('Y-m-d', strtotime($_POST['birth-year']));
   $data['gender'] = $_POST['gender'];
   $data['country'] = $_POST['country'];
@@ -23,8 +23,12 @@
   $queryResult = $wpdb->query($emailPresentQuery);
   if ($queryResult == 0){
     echo "You're registered.";
-    $wpdb->insert($table, $data); 
-    header('Location: '.get_site_url().'/thank-you');   
+    $wpdb->insert($table, $data);
+    $referrerId = $wpdb->insert_id;
+    setcookie('referrer-id', $referrerId+1, time()+3600);
+    $linkUrl = get_site_url().'/thank-you/?referrer-id='.$referrerId+1;
+//    spindo_welcome_email($data['first_name'], $data['email'], $linkUrl);
+    header('Location: '.get_site_url().'/thank-you');
   }
 
   get_header();
