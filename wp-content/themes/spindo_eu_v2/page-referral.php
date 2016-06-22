@@ -14,7 +14,7 @@
   $referrer  = $wpdb->get_row("SELECT * FROM lead_prize WHERE id='".$referrerId."'");
 
   $subject = 'You are invited to Spindo Club';
-  $message = "Hello,\n\nYou are referred to Spindo Club by your friend with email ".$referrer->email.". You might want to check us out.\nhttps://spindo.eu\n\nRegards,\nSpindo Club";
+  $message = "Hello,\n\nYour friend ".$referrer->first_name."(".$referrer->email."). suggests you to join Spindo Club. Check us out and sign up here https://spindo.eu\n\nRegards,\nSpindo Club";
   $headers = '';
   $attachments = [];
 
@@ -31,7 +31,7 @@
       $alreadyAddedEmails[] = $email;
     }
   }
-  
+
   get_header();
 
 ?>
@@ -57,9 +57,17 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <h3>Like us in Facebook!</h3>
-          <div class="fb-page" data-href="<?php echo get_fb_link(); ?>" data-width="500" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="<?php echo get_fb_link(); ?>"><a href="<?php echo  get_fb_link(); ?>">Startup Weekend Bohol</a></blockquote></div></div>
+
+          <div class="fb-page" data-href="<?php echo  get_fb_link(); ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="<?php echo  get_fb_link(); ?>" class="fb-xfbml-parse-ignore"><a href="<?php echo  get_fb_link(); ?>">Spindo Club - Competitions, Prize draws and Freebies</a></blockquote></div>
+
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   </div>
 </section>

@@ -17,9 +17,9 @@
       <div class="col-md-8 col-md-offset-4 col-xs-12">
         <h3>Contact</h3>
         <p style="font-size:1.2em">
-          Spindo Media OÜ<br/>
-          Company Registration Number: 11645024<br/>
-          KMK/VAT Number: EE101308067<br/>
+          Spindo Media (Engelvels OÜ)<br/>
+          Company Registration Number: 11287246<br/>
+          KMK/VAT Number: EE101716824<br/>
           Address: Tornimäe 5, 10145, Tallinn, Estonia<br/>
           E-mail: business@spindo.eu<br/>
         </p>      
